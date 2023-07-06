@@ -2,26 +2,71 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
+@layer base {
   :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+    --color-primary-700: 63, 50, 215;
+    --color-primary-500: 122, 110, 254;
+    --color-primary-300: 92, 78, 252;
+
+    --color-service-900: 33, 33, 33;
+    --color-service-800: 3, 29, 64;
+    --color-service-700: 46, 46, 46;
+  }
+
+  body,
+  button,
+  input,
+  a {
+    font-family: "Poppins", sans-serif !important;
+  }
+
+  *,
+  ::before,
+  ::after {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizelegibility;
+    user-select: none;
+  }
+
+  button,
+  input,
+  a {
+    outline: none;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@layer components {
+  * {
+    @apply scroll-py-[48px];
+  }
+}
+
+@layer utilities {
+  .margins {
+    @apply px-6;
+  }
+  .animation {
+    @apply duration-300 transition-all;
+  }
+  .font-Light {
+    @apply font-["Grotesk-Light"];
+  }
+  .font-Regular {
+    @apply font-["Grotesk-Regular"];
+  }
+  .font-Bold {
+    @apply font-["Grotesk-Bold"];
+  }
+  .font-ExtraBold {
+    @apply font-["Grotesk-ExtraBold"];
+  }
+
+  .bg-image {
+    height: 100%;
+    width: 100%;
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-position: center !important;
+    @apply bg-gray-100;
+  }
 }

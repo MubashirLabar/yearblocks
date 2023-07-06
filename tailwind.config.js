@@ -1,18 +1,52 @@
 /** @type {import('tailwindcss').Config} */
+
+function withOpacity(variableName) {
+  return ({ opacityValue }) => {
+    if (opacityValue !== undefined) {
+      return `rgba(var(${variableName}), ${opacityValue})`;
+    }
+    return `rgb(var(${variableName}))`;
+  };
+}
+
 module.exports = {
-  content: [
-    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/components/**/*.{js,ts,jsx,tsx,mdx}',
-    './src/app/**/*.{js,ts,jsx,tsx,mdx}',
-  ],
+  content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      screens: {
+        xsm: "360px",
+        // => @media (min-width: 360px) { ... }
+        sm: "640px",
+        // => @media (min-width: 640px) { ... }
+        md: "768px",
+        // => @media (min-width: 768px) { ... }
+        lg: "1024px",
+        // => @media (min-width: 1024px) { ... }
+        xl: "1280px",
+        // => @media (min-width: 1280px) { ... }
+        "2xl": "1440px",
+        // => @media (min-width: 1440px) { ... }
+        "3xl": "1950px",
+        // => @media (min-width: 1440px) { ... }
+        "4xl": "2450px",
+        // => @media (min-width: 1440px) { ... }
+      },
+      colors: {
+        primary: {
+          700: withOpacity("--color-primary-700"),
+          500: withOpacity("--color-primary-500"),
+          300: withOpacity("--color-primary-300"),
+        },
+        service: {
+          900: withOpacity("--color-service-900"),
+          800: withOpacity("--color-service-800"),
+          700: withOpacity("--color-service-700"),
+        },
+      },
+      maxWidth: {
+        "8xl": "1392px",
       },
     },
   },
   plugins: [],
-}
+};
