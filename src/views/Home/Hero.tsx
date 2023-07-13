@@ -2,27 +2,64 @@ import Link from "next/link";
 
 function Hero() {
   return (
-    <div className="w-full h-[680px] relative">
+    <div className="w-full relative">
+      <div className="w-full h-8 sm:h-10 bg-service-900 flex items-center justify-center">
+        <Link
+          href="/"
+          className="font-semibold text-sm sm:text-base text-white underline"
+        >
+          ORDER TODAY!
+        </Link>
+      </div>
+      <div className="w-full flex justify-center">
+        <div className="w-full max-w-8xl margins py-12 sm:py-16 lg:py-24 flex items-center justify-between flex-col lg:flex-row gap-y-10 gap-x-10">
+          <div className="flex-1 flex flex-col max-w-[460px]">
+            <div className="font-bold text-3xl sm:text-4xl lg:text-6xl leading-[40px] sm:leading-[50px] lg:leading-[80px] text-service-900 text-center lg:text-start mb-4 lg:mb-5">
+              Introducing YearBlocks
+            </div>
+            <div className="text-sm sm:text-base lg:text-[22px] leading-6 sm:leading-[28px] lg:leading-[36px] text-service-700 text-center lg:text-start mb-8 xl:mb-12">
+              At lacus vitae nulla sagittis scelerisque nisl. Pellentesque duis
+              cursus vestibulum, facilisi ac, sed faucibus.
+            </div>
+            <div className="flex items-center justify-center lg:justify-start gap-x-0 sm:gap-x-3 lg:gap-x-5">
+              <button className="buttonPrimary">Primary button</button>
+              <button className="buttonTransparent">Tertiary button</button>
+            </div>
+          </div>
+          <div
+            className="bgImage min-h-[250px] sm:min-h-[320px] max-w-[650px]"
+            style={{ backgroundImage: `url(/images/homeHero.webp)` }}
+          ></div>
+        </div>
+      </div>
+    </div>
+  );
+
+  return (
+    <div className="w-full relative">
       <div className="w-full h-10 bg-service-900 flex items-center justify-center">
-        <Link href="/" className="font-[500] text-base text-white underline">
-          Order Your Yearbook Today!
+        <Link href="/" className="font-semibold text-base text-white underline">
+          ORDER TODAY!
         </Link>
       </div>
       <div
-        className="bg-image flex flex-col justify-center px-12"
+        className="bgImage flex justify-center"
         style={{ backgroundImage: `url(/images/homeHero.jpeg)` }}
       >
-        <div className="w-[42%] bg-white p-12">
-          <div className="font-[600] text-[44px] leading-[54px] tracking-[-1px] text-service-700 mb-4">
-            LAST CHANCE TO BUY YOUR YEARBLOCK!
+        <div className="margins w-full max-w-8xl">
+          <div className="w-full lg:w-[60%] xl:w-[42%] bg-white p-8 xl:p-12 my-36">
+            <div className="font-bold text-4xl lg:text-6xl leading-[50px] lg:leading-[80px] text-service-900 mb-3 lg:mb-4">
+              Introducing YearBlocks
+            </div>
+            <div className="text-sm lg:text-base text-service-700 mb-8 xl:mb-12">
+              At lacus vitae nulla sagittis scelerisque nisl. Pellentesque duis
+              cursus vestibulum, facilisi ac, sed faucibus.
+            </div>
+            <div className="flex items-center gap-x-3 lg:gap-x-5">
+              <button className="buttonPrimary">Primary button</button>
+              <button className="buttonTransparent">Tertiary button</button>
+            </div>
           </div>
-          <div className="text-base text-service-700 mb-6">
-            {` Supplies are running low, so get your yearbook ASAP! Once they're
-            gone, they're gone.`}
-          </div>
-          <button className="bg-service-900 rounded-full text-white uppercase py-2.5 px-4 text-sm font-[600] tracking-[-0.2px]">
-            Get Your YearBlock
-          </button>
         </div>
       </div>
     </div>

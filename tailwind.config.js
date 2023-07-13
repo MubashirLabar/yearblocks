@@ -34,17 +34,16 @@ module.exports = {
       colors: {
         primary: {
           700: withOpacity("--color-primary-700"),
-          500: withOpacity("--color-primary-500"),
-          300: withOpacity("--color-primary-300"),
         },
         service: {
           900: withOpacity("--color-service-900"),
           800: withOpacity("--color-service-800"),
           700: withOpacity("--color-service-700"),
+          500: withOpacity("--color-service-500"),
         },
       },
       maxWidth: {
-        "8xl": "1392px",
+        "8xl": "1440px",
       },
     },
   },

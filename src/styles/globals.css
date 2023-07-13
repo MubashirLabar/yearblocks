@@ -4,20 +4,19 @@
 
 @layer base {
   :root {
-    --color-primary-700: 63, 50, 215;
-    --color-primary-500: 122, 110, 254;
-    --color-primary-300: 92, 78, 252;
+    --color-primary-700: 251, 188, 9;
 
-    --color-service-900: 33, 33, 33;
+    --color-service-900: 17, 24, 39;
     --color-service-800: 3, 29, 64;
     --color-service-700: 46, 46, 46;
+    --color-service-500: 109, 114, 128;
   }
 
   body,
   button,
   input,
   a {
-    font-family: "Poppins", sans-serif !important;
+    font-family: "Montserrat", sans-serif !important;
   }
 
   *,
@@ -43,25 +42,45 @@
 
 @layer utilities {
   .margins {
-    @apply px-6;
+    @apply px-5 md:px-6 sm:px-8;
   }
   .animation {
     @apply duration-300 transition-all;
   }
-  .font-Light {
-    @apply font-["Grotesk-Light"];
-  }
-  .font-Regular {
-    @apply font-["Grotesk-Regular"];
-  }
-  .font-Bold {
-    @apply font-["Grotesk-Bold"];
-  }
-  .font-ExtraBold {
-    @apply font-["Grotesk-ExtraBold"];
+
+  .animation-2 {
+    transition: all 0.3s cubic-bezier(0, 0, 0.1, 1.08) 0s;
   }
 
-  .bg-image {
+  .animation-3 {
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    transition-duration: 500ms;
+    -webkit-transition-duration: 500ms;
+    transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
+    -webkit-transition-timing-function: cubic-bezier(0.86, 0, 0.07, 1);
+  }
+
+  .hide {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .show {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .buttonPrimary {
+    @apply py-2.5 px-5 rounded-[6px] flex items-center justify-center duration-300 transition-all bg-primary-700 text-sm lg:text-base font-semibold text-white;
+  }
+
+  .buttonTransparent {
+    @apply py-2.5 px-5 rounded-[6px] flex items-center justify-center duration-300 transition-all bg-transparent text-sm lg:text-base font-semibold text-service-900;
+  }
+
+  .bgImage {
     height: 100%;
     width: 100%;
     background-repeat: no-repeat !important;
