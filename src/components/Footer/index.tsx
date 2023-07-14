@@ -5,27 +5,28 @@ import {
   BiLogoLinkedin,
   BiLogoYoutube,
 } from "react-icons/bi";
+import routes from "routes";
 
 function Footer() {
   const linksLeft = [
     {
       label: "My YearBlocks",
-      link: "/",
+      link: routes.myYearBlock,
     },
     {
       label: "My DigiSigs",
-      link: "/",
+      link: routes.myDigiSigs,
     },
   ];
 
   const linksRight = [
     {
       label: "Sign a YearBlock",
-      link: "/",
+      link: routes.signYearBlock,
     },
     {
       label: "About Us",
-      link: "/",
+      link: routes.aboutUs,
     },
   ];
 
@@ -33,22 +34,22 @@ function Footer() {
     {
       label: "Facebook",
       icon: <BiLogoFacebook />,
-      link: "/",
+      link: routes.facebook,
     },
     {
       label: "Twitter",
       icon: <BiLogoTwitter />,
-      link: "/",
+      link: routes.twitter,
     },
     {
       label: "Linked",
       icon: <BiLogoLinkedin />,
-      link: "/",
+      link: routes.linkedIn,
     },
     {
       label: "Youtube",
       icon: <BiLogoYoutube />,
-      link: "/",
+      link: routes.youtube,
     },
   ];
 
@@ -57,7 +58,7 @@ function Footer() {
       <div className="w-full max-w-8xl py-8 sm:py-10 lg:py-16 flex items-center">
         <div className="w-full flex flex-col">
           <div className="flex-1 items-center justify-center mb-10 flex lg:hidden">
-            <Link href={"/"}>
+            <Link href={routes.home}>
               <img
                 src="/images/logo.svg"
                 alt="logo"

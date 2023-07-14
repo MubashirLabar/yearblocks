@@ -3,6 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { IoIosMenu } from "react-icons/io";
 import Sidebar from "./Sidebar";
+import routes from "routes";
 
 export interface HeaderType {
   title: string;
@@ -12,19 +13,19 @@ export interface HeaderType {
 const headerLink: HeaderType[] = [
   {
     title: "My YearBlocks",
-    link: "/",
+    link: routes.myYearBlock,
   },
   {
     title: "My DigiSigs",
-    link: "/",
+    link: routes.myDigiSigs,
   },
   {
     title: "Sign a YearBlock",
-    link: "/",
+    link: routes.signYearBlock,
   },
   {
     title: "About Us",
-    link: "/",
+    link: routes.signYearBlock,
   },
 ];
 
@@ -35,7 +36,7 @@ function Header() {
       <div className="bg-white w-full sticky left-0 right-0 top-0 hidden lg:flex justify-center h-20 border-solid border-b-[1px] border-gray-900/10 z-[999]">
         <div className="w-full max-w-8xl margins flex items-center">
           <div className="flex-1 flex items-center gap-x-4 xl:gap-x-8">
-            <Link href={"/"} className="-ml-8">
+            <Link href={routes.home} className="-ml-7">
               <Image
                 src="/images/logo.svg"
                 width={224}
@@ -57,12 +58,12 @@ function Header() {
           </div>
           <div className="flex items-center gap-x-6 xl:gap-x-8">
             <Link
-              href="/"
+              href={routes.login}
               className="animation text-base font-semibold text-service-900 hover:text-primary-700"
             >
               Login
             </Link>
-            <Link href={"/"} className="buttonPrimary">
+            <Link href={routes.createYearBlock} className="buttonPrimary">
               Get Started
             </Link>
           </div>
@@ -73,7 +74,7 @@ function Header() {
       <div className="bg-white w-full sticky left-0 right-0 top-0 flex lg:hidden justify-center h-20 border-solid border-b-[1px] border-gray-900/10 z-[999]">
         <div className="w-full max-w-8xl margins flex items-center">
           <div className="flex-1 flex items-center gap-x-4 xl:gap-x-8">
-            <Link href={"/"} className="-ml-8">
+            <Link href={routes.home} className="-ml-7">
               <Image
                 src="/images/logo.svg"
                 width={200}

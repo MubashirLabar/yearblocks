@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import React, { useEffect, Dispatch, SetStateAction } from "react";
+import routes from "routes";
 
 interface HeaderType {
   title: string;
@@ -36,7 +37,7 @@ function Sidebar({
       <div className="w-full h-full bg-service-bg relative margins animation-2">
         <div className="w-full flex items-center h-[80px] absolute left-0 right-0 margins">
           <div className="flex-1 flex items-center">
-            <Link href={"/"} className="-ml-8">
+            <Link href={routes.home} className="-ml-8">
               <Image
                 src="/images/logo.svg"
                 width={200}
@@ -61,6 +62,17 @@ function Sidebar({
                 </div>
               </Link>
             ))}
+            <Link href={routes.login}>
+              <div className="animation text-service-900 text-2xl font-semibold cursor-pointer hover:text-primary-700">
+                Login
+              </div>
+            </Link>
+            <Link
+              href={routes.createYearBlock}
+              className="w-full buttonPrimary !text-2xl !font-semibold"
+            >
+              Get Started
+            </Link>
           </div>
         </div>
       </div>
