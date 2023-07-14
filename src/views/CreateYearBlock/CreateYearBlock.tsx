@@ -19,7 +19,7 @@ function CreateYearBlock() {
           <div className="mb-8 xl:mb-12 flex justify-center">
             <div className="grid grid-cols-2 gap-x-1 rounded-full p-1 text-center text-xs font-semibold leading-5 ring-1 ring-inset ring-gray-200">
               <div
-                className={` text-white cursor-pointer rounded-full px-2.5 py-1.5 ${
+                className={`cursor-pointer rounded-full px-2.5 py-1.5 ${
                   activeTab === "create-new"
                     ? "bg-primary-700 text-white"
                     : "transparent text-gray-500"

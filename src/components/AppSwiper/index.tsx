@@ -1,13 +1,9 @@
 import { Children, useState, useRef, useCallback } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Autoplay, Pagination, Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import SwiperCore from "swiper";
-
-SwiperCore.use([Autoplay, Pagination, Navigation]);
 
 interface AppSwiperProps {
   children: React.ReactNode;
@@ -96,9 +92,9 @@ const AppSwiper: React.FC<AppSwiperProps> = ({
               height="100%"
               fill="none"
               stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >
@@ -115,9 +111,9 @@ const AppSwiper: React.FC<AppSwiperProps> = ({
               height="100%"
               fill="none"
               stroke="currentColor"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
               viewBox="0 0 24 24"
               xmlns="http://www.w3.org/2000/svg"
             >

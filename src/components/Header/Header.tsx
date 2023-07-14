@@ -25,7 +25,7 @@ const headerLink: HeaderType[] = [
   },
   {
     title: "About Us",
-    link: routes.signYearBlock,
+    link: routes.aboutUs,
   },
 ];
 

@@ -4,7 +4,7 @@ export default Object.freeze({
   createYearBlock: "/create-yearblock",
   myDigiSigs: "/my-digisigs",
   signYearBlock: "/sign-yearblock",
-  myYearBlock: "/sign-yearblock",
+  myYearBlock: "/my-yearblocks",
   login: "/login",
   dashboard: "/dashboard",
   facebook: "/",
