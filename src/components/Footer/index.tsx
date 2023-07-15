@@ -2,8 +2,7 @@ import Link from "next/link";
 import {
   BiLogoFacebook,
   BiLogoTwitter,
-  BiLogoLinkedin,
-  BiLogoYoutube,
+  BiLogoInstagramAlt,
 } from "react-icons/bi";
 import routes from "routes";
 
@@ -32,24 +31,19 @@ function Footer() {
 
   const socialLinks = [
     {
-      label: "Facebook",
-      icon: <BiLogoFacebook />,
-      link: routes.facebook,
-    },
-    {
       label: "Twitter",
       icon: <BiLogoTwitter />,
       link: routes.twitter,
     },
     {
-      label: "Linked",
-      icon: <BiLogoLinkedin />,
-      link: routes.linkedIn,
+      label: "Facebook",
+      icon: <BiLogoFacebook />,
+      link: routes.facebook,
     },
     {
-      label: "Youtube",
-      icon: <BiLogoYoutube />,
-      link: routes.youtube,
+      label: "Instagram",
+      icon: <BiLogoInstagramAlt />,
+      link: routes.instagram,
     },
   ];
 
@@ -98,12 +92,14 @@ function Footer() {
           <div className="w-full flex flex-col justify-center items-center">
             <div className="flex items-center gap-2 lg:gap-[18px] mb-5 lg:mb-[30px]">
               {socialLinks.map((item, index) => (
-                <div
+                <a
                   key={index}
+                  href={item.link}
+                  target="_blank"
                   className="h-8 sm:h-10 lg:h-12 w-8 sm:w-10 lg:w-12 rounded-full flex items-center justify-center text-service-900 bg-gray-100 cursor-pointer animation hover:bg-primary-700 hover:text-white text-base sm:text-[22px]"
                 >
                   {item.icon}
-                </div>
+                </a>
               ))}
             </div>
             <div className="text-sm lg:text-base text-service-900 leading-5 lg:leading-[24px]">

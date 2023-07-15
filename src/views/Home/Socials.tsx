@@ -1,3 +1,24 @@
+import Image from "next/image";
+import routes from "routes";
+
+const socialMedias = [
+  {
+    label: "Twitter",
+    image: "/images/twitter.svg",
+    link: routes.twitter,
+  },
+  {
+    label: "Facebook",
+    image: "/images/facebook.svg",
+    link: routes.facebook,
+  },
+  {
+    label: "instagram",
+    image: "/images/instagram.svg",
+    link: routes.instagram,
+  },
+];
+
 function Socials() {
   return (
     <div className="w-full flex justify-center">
@@ -26,18 +47,21 @@ function Socials() {
             FOLLOW OUR SOCIALS
           </div>
           <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-5 xl:gap-10">
-            <div
-              className="bgImage !h-[220px]"
-              style={{ backgroundImage: `url(/images/social-1.webp)` }}
-            />
-            <div
-              className="bgImage !h-[220px]"
-              style={{ backgroundImage: `url(/images/social-2.webp)` }}
-            />
-            <div
-              className="bgImage !h-[220px]"
-              style={{ backgroundImage: `url(/images/social-3.webp)` }}
-            />
+            {socialMedias.map((item, idx) => (
+              <a
+                key={idx}
+                href={item.link}
+                target="_blank"
+                className="w-full !h-[220px] flex items-center justify-center animations border-solid border-[1px] border-gray-900/10 hover:border-primary-700 cursor-pointer"
+              >
+                <Image
+                  src={item.image}
+                  width={120}
+                  height={120}
+                  alt={item.label}
+                />
+              </a>
+            ))}
           </div>
         </div>
       </div>

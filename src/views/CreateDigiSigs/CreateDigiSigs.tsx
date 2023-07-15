@@ -11,10 +11,10 @@ function CreateYearBlock() {
       <div className="w-full flex justify-center margins">
         <div className="w-full flex flex-col py-12 sm:py-16 lg:py-24">
           <div className="font-bold text-3xl sm:text-4xl lg:text-6xl leading-[40px] sm:leading-[50px] lg:leading-[80px] text-service-900 text-center mb-4 lg:mb-5">
-            Sign YearBlock
+            Create New DigiSigs
           </div>
           <div className="text-sm sm:text-base lg:text-[22px] leading-6 sm:leading-[28px] lg:leading-[36px] text-service-700 text-center mb-8 xl:mb-12">
-            Use your DigiSigs to sign a classmates yearblook
+            Upload and mint a new DigiSig here
           </div>
 
           <div className="m-[auto] w-full max-w-[600px]">
@@ -42,13 +42,12 @@ function CreateYearBlock() {
                 </div>
               </div>
             </div>
-
             <div className="w-full flex flex-col gap-y-6 sm:gap-y-8">
               <div className="w-full flex items-center justify-center">
                 <Image
-                  src="/images/yearBlockSign.png"
-                  width={240}
-                  height={240}
+                  src="/images/digiSign.png"
+                  width={220}
+                  height={220}
                   alt="Logo"
                 />
               </div>
@@ -57,29 +56,13 @@ function CreateYearBlock() {
                   htmlFor="yearbook"
                   className="text-sm sm:text-base font-semibold leading-6 text-gray-900"
                 >
-                  YearBook
+                  Signature
                 </label>
                 <div className="mt-2">
                   <input
                     type="text"
                     name="yearbook"
                     id="yearbook"
-                    className="w-full rounded-md border-0 py-1.5 px-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary-700 sm:text-base sm:leading-8"
-                  />
-                </div>
-              </div>
-              <div className="w-full">
-                <label
-                  htmlFor="digisigs"
-                  className="text-sm sm:text-base font-semibold leading-6 text-gray-900"
-                >
-                  DigiSigs
-                </label>
-                <div className="mt-2">
-                  <input
-                    type="text"
-                    name="digisigs"
-                    id="digisigs"
                     className="w-full rounded-md border-0 py-1.5 px-4 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary-700 sm:text-base sm:leading-8"
                   />
                 </div>
@@ -105,7 +88,7 @@ function CreateYearBlock() {
                   htmlFor="front-cover"
                   className="text-sm sm:text-base font-semibold leading-6 text-gray-900"
                 >
-                  Preview
+                  Picture
                 </label>
                 <div className="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
                   <div className="text-center">
@@ -135,7 +118,7 @@ function CreateYearBlock() {
                 </div>
               </div>
               <div className="w-full flex items-center gap-x-5">
-                <button className="buttonPrimary">Mint YearBlocks</button>
+                <button className="buttonPrimary">Mint DigiSig</button>
               </div>
             </div>
           </div>

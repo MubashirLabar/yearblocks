@@ -1,9 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { IoIosMenu } from "react-icons/io";
-import Sidebar from "./Sidebar";
+import { FaUserCircle } from "react-icons/fa";
 import routes from "routes";
+import * as fcl from "@onflow/fcl";
+
+import "flow/config";
+import Sidebar from "./Sidebar";
 
 export interface HeaderType {
   title: string;
@@ -31,6 +35,12 @@ const headerLink: HeaderType[] = [
 
 function Header() {
   const [expend, setExpend] = useState(false);
+  const [user, setUser] = useState({ loggedIn: null });
+
+  useEffect(() => {
+    fcl.currentUser.subscribe(setUser);
+  }, []);
+
   return (
     <>
       <div className="bg-white w-full sticky left-0 right-0 top-0 hidden lg:flex justify-center h-20 border-solid border-b-[1px] border-gray-900/10 z-[999]">
@@ -56,17 +66,28 @@ function Header() {
               ))}
             </div>
           </div>
-          <div className="flex items-center gap-x-6 xl:gap-x-8">
-            <Link
-              href={routes.login}
-              className="animation text-base font-semibold text-service-900 hover:text-primary-700"
-            >
-              Login
-            </Link>
-            <Link href={routes.createYearBlock} className="buttonPrimary">
-              Get Started
-            </Link>
-          </div>
+          {user?.loggedIn ? (
+            <div className="flex items-center gap-x-6">
+              <button className="text-[38px] text-gray-600">
+                <FaUserCircle />
+              </button>
+              <button onClick={fcl.unauthenticate} className="buttonPrimary">
+                Logout
+              </button>
+            </div>
+          ) : (
+            <div className="flex items-center gap-x-6 xl:gap-x-8">
+              <button
+                onClick={fcl.logIn}
+                className="animation text-base font-semibold text-service-900 hover:text-primary-700"
+              >
+                Login
+              </button>
+              <button onClick={fcl.signUp} className="buttonPrimary">
+                Get Started
+              </button>
+            </div>
+          )}
         </div>
       </div>
 

@@ -4,19 +4,19 @@ import { FiPlus, FiMinus } from "react-icons/fi";
 const FaqsList = [
   {
     title: "Can anyone see my personal YearBlock?",
-    text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    text: "The current phase of YearBlocks development is focused on proof of concept, prioritizing student privacy by not using real student images. The initial phase involves an on-premise solution hosted by the school, ensuring data remains within the campus. Token gating will be implemented to restrict access to the yearbook media, ensuring only those who own a copy can view it, further safeguarding student privacy and enhancing the security of the platform.",
   },
   {
     title: "Can I sign anyone’s YearBlock?",
-    text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    text: `YearBlocks ensures that only authorized signers can add a signature and comment to your YearBlock through a multi-step process. In future phases, the platform will implement a series of "handshakes" that involve requesting, accepting, signing, and accepting signatures. These steps ensure that only authorized individuals can participate in the signing process, adding an extra layer of security and verification to the yearbook content. By incorporating these measures, YearBlocks aims to enhance the integrity and authenticity of the signatures and comments, providing a trusted and controlled environment for preserving and interacting with yearbook memories.`,
   },
   {
     title: "How can I manage my DigiSigs?",
-    text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    text: `Managing digital signatures in YearBlocks provides a secure and convenient way to authenticate and control the signing process. Users have the ability to create, view, and manage their digital signatures within the platform. The system ensures that only authorized signers can add their signatures to YearBlocks, maintaining the integrity and authenticity of the signed content. Users can easily track and monitor the status of their signatures, including requests, acceptance, and finalization. This centralized management of digital signatures simplifies the process, enhances security, and provides a seamless experience for users to interact with and manage their signed YearBlocks.`,
   },
   {
     title: "How can I manage my school’s YearBlock?",
-    text: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+    text: "Schools can easily authorize designated personnel to manage their YearBlocks mints year after year through the platform's administrative capabilities. Authorized personnel, such as yearbook coordinators or administrators, can access the system with proper authentication and permissions. They have the ability to upload new yearbooks for minting, manage whitelists for free student and staff minting, and oversee the overall yearbook management process. By granting specific permissions and roles, schools can ensure continuity and seamless management of YearBlocks across different academic years, allowing for efficient administration and preserving the integrity of the yearbook minting process.",
   },
 ];
 

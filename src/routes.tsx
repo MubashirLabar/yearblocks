@@ -7,8 +7,7 @@ export default Object.freeze({
   myYearBlock: "/my-yearblocks",
   login: "/login",
   dashboard: "/dashboard",
-  facebook: "/",
-  twitter: "/",
-  linkedIn: "/",
-  youtube: "/",
+  facebook: "https://www.facebook.com/steadystudios",
+  instagram: "https://www.instagram.com/steadystudios_/",
+  twitter: "https://twitter.com/steadystudios_",
 });
