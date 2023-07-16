@@ -46,7 +46,7 @@ function Socials() {
           <div className="text-3xl sm:text-4xl lg:text-6xl leading-[40px] sm:leading-[50px] lg:leading-[80px] font-bold text-center uppercase mb-8 sm:mb-12 lg:mb-16">
             FOLLOW OUR SOCIALS
           </div>
-          <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-5 xl:gap-10">
+          <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-5 xl:gap-8">
             {socialMedias.map((item, idx) => (
               <a
                 key={idx}
@@ -56,8 +56,8 @@ function Socials() {
               >
                 <Image
                   src={item.image}
-                  width={120}
-                  height={120}
+                  width={100}
+                  height={100}
                   alt={item.label}
                 />
               </a>

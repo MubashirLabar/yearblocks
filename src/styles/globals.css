@@ -42,7 +42,7 @@
 
 @layer utilities {
   .margins {
-    @apply px-5 md:px-6 sm:px-8;
+    @apply px-5 sm:px-6 lg:px-12;
   }
   .animation {
     @apply duration-300 transition-all;
@@ -74,6 +74,10 @@
 
   .buttonPrimary {
     @apply py-2.5 px-5 rounded-full flex items-center justify-center duration-300 transition-all bg-primary-700 text-sm lg:text-base font-semibold text-white hover:bg-primary-700/90;
+  }
+
+  .buttonHole {
+    @apply py-2.5 px-5 rounded-full flex items-center justify-center duration-300 transition-all bg-transparent border-[1px] border-primary-700 text-primary-700 text-sm lg:text-base font-semibold;
   }
 
   .buttonTransparent {

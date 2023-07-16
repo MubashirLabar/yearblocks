@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { IoIosMenu } from "react-icons/io";
-import { FaUserCircle } from "react-icons/fa";
 import routes from "routes";
 import * as fcl from "@onflow/fcl";
 
@@ -35,7 +34,7 @@ const headerLink: HeaderType[] = [
 
 function Header() {
   const [expend, setExpend] = useState(false);
-  const [user, setUser] = useState({ loggedIn: null });
+  const [user, setUser] = useState({ loggedIn: null, addr: null });
 
   useEffect(() => {
     fcl.currentUser.subscribe(setUser);
@@ -66,11 +65,9 @@ function Header() {
               ))}
             </div>
           </div>
-          {user?.loggedIn ? (
-            <div className="flex items-center gap-x-6">
-              <button className="text-[38px] text-gray-600">
-                <FaUserCircle />
-              </button>
+          {user.loggedIn && user.addr ? (
+            <div className="flex items-center gap-x-4">
+              {<div className="buttonHole">{user.addr || "N/A"}</div>}
               <button onClick={fcl.unauthenticate} className="buttonPrimary">
                 Logout
               </button>
@@ -114,7 +111,12 @@ function Header() {
       </div>
 
       {/* For Tablet | Mobile Screen */}
-      <Sidebar expend={expend} setExpend={setExpend} headerLink={headerLink} />
+      <Sidebar
+        expend={expend}
+        setExpend={setExpend}
+        headerLink={headerLink}
+        user={user}
+      />
     </>
   );
 }

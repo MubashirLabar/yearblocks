@@ -2,6 +2,9 @@ import Link from "next/link";
 import Image from "next/image";
 import React, { useEffect, Dispatch, SetStateAction } from "react";
 import routes from "routes";
+import * as fcl from "@onflow/fcl";
+
+import "flow/config";
 
 interface HeaderType {
   title: string;
@@ -12,10 +15,12 @@ function Sidebar({
   expend,
   setExpend,
   headerLink,
+  user,
 }: {
   expend: boolean;
   setExpend: Dispatch<SetStateAction<boolean>>;
   headerLink: HeaderType[];
+  user: any;
 }) {
   useEffect(() => {
     if (expend) {
@@ -62,17 +67,35 @@ function Sidebar({
                 </div>
               </Link>
             ))}
-            <Link href={routes.login}>
-              <div className="animation text-service-900 text-2xl font-semibold cursor-pointer hover:text-primary-700">
-                Login
-              </div>
-            </Link>
-            <Link
-              href={routes.createYearBlock}
-              className="w-full buttonPrimary !text-2xl !font-semibold"
-            >
-              Get Started
-            </Link>
+            {user.loggedIn && user.addr ? (
+              <>
+                {
+                  <div className="buttonHole !text-2xl">
+                    {user.addr || "N/A"}
+                  </div>
+                }
+                <button
+                  onClick={fcl.unauthenticate}
+                  className="w-full buttonPrimary !text-2xl !font-semibold"
+                >
+                  Logout
+                </button>
+              </>
+            ) : (
+              <>
+                <Link href={routes.login}>
+                  <div className="animation text-service-900 text-2xl font-semibold cursor-pointer hover:text-primary-700">
+                    Login
+                  </div>
+                </Link>
+                <Link
+                  href={routes.createYearBlock}
+                  className="w-full buttonPrimary !text-2xl !font-semibold"
+                >
+                  Get Started
+                </Link>
+              </>
+            )}
           </div>
         </div>
       </div>
