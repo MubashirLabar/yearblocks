@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from "react";
+import { Fragment, useEffect, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { IoIosMenu } from "react-icons/io";
+import { IoIosMenu, IoIosArrowDown } from "react-icons/io";
 import routes from "routes";
 import * as fcl from "@onflow/fcl";
+import { Menu, Transition } from "@headlessui/react";
 
 import "flow/config";
 import Sidebar from "./Sidebar";
@@ -29,6 +30,21 @@ const headerLink: HeaderType[] = [
   {
     title: "About Us",
     link: routes.aboutUs,
+  },
+];
+
+const userLinks = [
+  {
+    label: "Create YearBlocks",
+    link: routes.createYearBlock,
+  },
+  {
+    label: "Sign YearBlocks",
+    link: routes.createYearBlock,
+  },
+  {
+    label: "Sign DigiSigs",
+    link: routes.createDigiSigns,
   },
 ];
 
@@ -67,10 +83,62 @@ function Header() {
           </div>
           {user.loggedIn && user.addr ? (
             <div className="flex items-center gap-x-4">
-              {<div className="buttonHole">{user.addr || "N/A"}</div>}
-              <button onClick={fcl.unauthenticate} className="buttonPrimary">
-                Logout
-              </button>
+              <div className="relative">
+                <Menu as="div">
+                  <div>
+                    <Menu.Button className="buttonHole">
+                      {user.addr}
+                      <IoIosArrowDown className="ml-2 -mr-1 h-5 w- text-primary-700" />
+                    </Menu.Button>
+                  </div>
+                  <Transition
+                    as={Fragment}
+                    enter="transition ease-out duration-100"
+                    enterFrom="transform opacity-0 scale-95"
+                    enterTo="transform opacity-100 scale-100"
+                    leave="transition ease-in duration-75"
+                    leaveFrom="transform opacity-100 scale-100"
+                    leaveTo="transform opacity-0 scale-95"
+                  >
+                    <Menu.Items className="absolute right-0 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+                      <div className="px-1 py-1">
+                        {userLinks.map((item, index) => (
+                          <Menu.Item key={index}>
+                            {({ active }) => (
+                              <Link
+                                href={item.link}
+                                className={`${
+                                  active
+                                    ? "bg-primary-700 text-white"
+                                    : "text-service-900"
+                                } group flex w-full items-center rounded-md px-3 py-2 text-base`}
+                              >
+                                {item.label}
+                              </Link>
+                            )}
+                          </Menu.Item>
+                        ))}
+                      </div>
+                      <div className="px-1 py-1">
+                        <Menu.Item>
+                          {({ active }) => (
+                            <button
+                              className={`${
+                                active
+                                  ? "bg-primary-700 text-white"
+                                  : "text-gray-900"
+                              } group flex w-full items-center rounded-md px-3 py-2 text-base`}
+                              onClick={fcl.unauthenticate}
+                            >
+                              Logout
+                            </button>
+                          )}
+                        </Menu.Item>
+                      </div>
+                    </Menu.Items>
+                  </Transition>
+                </Menu>
+              </div>
             </div>
           ) : (
             <div className="flex items-center gap-x-6 xl:gap-x-8">

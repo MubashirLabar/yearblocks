@@ -17,7 +17,7 @@ function Hero() {
             <div className="font-bold text-3xl sm:text-4xl lg:text-6xl leading-[40px] sm:leading-[50px] lg:leading-[80px] text-service-900 text-center lg:text-start mb-4 lg:mb-5">
               Introducing YearBlocks
             </div>
-            <div className="text-sm sm:text-base lg:text-[22px] leading-6 sm:leading-[28px] lg:leading-[36px] text-service-700 text-center lg:text-start mb-8 xl:mb-12">
+            <div className="text-sm sm:text-base lg:text-[22px] leading-6 sm:leading-[28px] lg:leading-[34px] text-service-700 text-center lg:text-start mb-8 xl:mb-12">
               At lacus vitae nulla sagittis scelerisque nisl. Pellentesque duis
               cursus vestibulum, facilisi ac, sed faucibus.
             </div>
