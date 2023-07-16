@@ -13,9 +13,16 @@ function DigiSigsFeature() {
             <div className="font-bold text-2xl sm:text-3xl md:text-4xl leading-[32px] sm:leading-[36px] md:leading-[50px] text-service-900">
               Create My DigiSigs
             </div>
-            <div className="text-sm sm:text-base leading-6 sm:leading-7 text-gray-600">
+            <div className="text-sm sm:text-base leading-6 sm:leading-7 text-gray-600 mb-2">
               {`Using the platform, you can easily capture your digital signature, allowing you to personalize your YearBlocks and leave a unique mark to commemorate your school memories.`}
             </div>
+
+            <Link
+              href="/create-digisigs"
+              className="buttonPrimary max-w-fit min-w-[120px]"
+            >
+              Create
+            </Link>
           </div>
         </div>
         <div className="flex items-center flex-col md:flex-row gap-y-6 md:gap-y-0 md:gap-x-8 lg:gap-x-12">
